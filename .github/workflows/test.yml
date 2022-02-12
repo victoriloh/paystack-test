@@ -20,7 +20,7 @@ jobs:
         uses: starburstdata/action-testng-report@master
         if: github.ref == 'refs/heads/master'
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.MY_GITHUB_TOKEN }}
           check_name: build
           update_existing_check: true
           report_paths: "**/Paystack.html"
@@ -28,6 +28,6 @@ jobs:
         uses: starburstdata/action-testng-report@master
         if: github.ref == 'refs/heads/master'
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.MY_GITHUB_TOKEN }}
           check_name: new check name
           report_paths: "**/Paystack.html"
