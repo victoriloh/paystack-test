@@ -15,19 +15,19 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: 8
-      - run: mvn clean test --batch-mode -Dmaven.test.failure.ignore=true
+      - run: mvn clean test
       - name: Update existing check report
         uses: starburstdata/action-testng-report@master
         if: github.ref == 'refs/heads/master'
         with:
-          github_token: ${{ secrets.MY_GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           check_name: build
           update_existing_check: true
-          report_paths: "**/Paystack.html"
+          report_paths: "Paystack.html"
       - name: Create new check report
         uses: starburstdata/action-testng-report@master
         if: github.ref == 'refs/heads/master'
         with:
-          github_token: ${{ secrets.MY_GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           check_name: new check name
-          report_paths: "**/Paystack.html"
+          report_paths: "Paystack.html"
