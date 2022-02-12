@@ -1,0 +1,13 @@
+{
+  "endpoint": "/api/planets/3/",
+
+  "negativeTest": {
+    "name": "Automated testing",
+    "complete": "true"
+  },
+  "PositiveTest" : {
+    "name": "Automated testing",
+    "complete": "true"
+  }
+
+}
